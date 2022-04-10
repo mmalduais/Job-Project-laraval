@@ -1,0 +1,116 @@
+ 
+ body{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    font-family: 'Lobster Two', cursive;
+    font-family: 'Luxurious Roman', cursive;
+   
+   
+}
+:root {
+    --main-color: #19c8fa;
+    --transparent-color: rgb(15 116 143 / 70%);
+    --section-padding: 30px;
+  }
+
+ul {
+    list-style: none;
+  }
+  .topic{
+    text-align: center;
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 50px;
+    position: relative;
+  
+}
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ /* Start Services */
+
+  .services {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+  
+  .services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+  }
+  
+  .services .card {
+    box-shadow: 0px 1px 7px rgb(0 0 0 / 10%);
+    margin-left: 20px;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .services .box {
+  
+    margin-left: 20px;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .services .box i {
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+  }
+  
+  .services .box .text h2 {
+    font-weight: bold;
+    padding: 5px 0 0;
+    /* font-weight: bold; */
+    font-size: 20px;
+  }
+  .services .box .text {
+    text-align: start;
+  }
+  
+  .services .box .text p {
+    color: #777;
+    line-height: 1.5;
+    padding-top: 10px;
+  }
+  
+  .services .info p {
+    color: #777;
+    line-height: 1.5;
+    padding-top: 10px;
+  }
+  
+  .services .info {
+    text-align: center;
+  }
+  
+  .services .info a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  
+    color: #008000e0;
+    padding-top: 20px;
+  }
+  
+  /* End Services */
