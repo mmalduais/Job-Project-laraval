@@ -12,18 +12,18 @@ class DashboardController extends Controller
 {
     function __construct()
     {
-        
+
     }
 
-    
+
     //
 
     public function dashboard(){
-       
+
         //return view('admin.dashboard');
 
         $user=User::with(['profile','products'])->where('user_id',6)->get()->first();
-        
+
         //return $user->profile->facebook;
         return response($user);
 

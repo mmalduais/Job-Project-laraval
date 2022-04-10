@@ -16,11 +16,17 @@ class AuthController extends Controller
     public function listAll(){
 
         $users=User::where('is_active',1)
-        ->where('email_verified_at','!=',NULL)
+
+           ->where('email_verified_at','!=',NULL)
         ->orWhere('name','like','%af%')
+        // ->where('email_verified_at','==',NULL)
+        // ->orWhere('name','like','%af%')
         ->orderBy('user_id','desc')
-       // ->take(2)
         ->get();
+       // ->take(2)
+    //    echo "<pre>";
+    //    print_r($users);
+    //    exit;
         //$user=User::find(1);
         //return response($user);
         return view('admin.users.list_users')

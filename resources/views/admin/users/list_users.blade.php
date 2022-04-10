@@ -1,12 +1,11 @@
-
 @extends('admin.layout.master')
-@section('content')
+@section('adminContent')
 
 
 <h4 class="fw-bold py-3 mb-4">
     <span class="text-muted fw-light">Tables /</span> Basic Tables
   </h4>
-  
+
   <!-- Basic Bootstrap Table -->
   <div class="card">
     <h5 class="card-header">Table Basic</h5>
@@ -17,7 +16,7 @@
             <th>#</th>
             <th>id</th>
             <th>name</th>
-            
+
             <th>image</th>
             <th>email</th>
             <th>status</th>
@@ -25,8 +24,7 @@
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
-         
-         @foreach ($allUsers as $user)
+            @foreach ($allUsers as $user)
 
          <tr>
            <td>{{ $loop->iteration }}</td>
@@ -57,10 +55,10 @@
             </div>
           </td>
         </tr>
-             
+
          @endforeach
-        
-         
+
+
         </tbody>
       </table>
     </div>

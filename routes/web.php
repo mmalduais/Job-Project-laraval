@@ -94,21 +94,21 @@ Route::group([
 
 
 
-Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
-Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
+    Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
 
-Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
+    Route::get('/new_category',[CategoriesController::class,'create'])->name('new_category');
 
-Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");
-Route::get('/new_category',[CategoriesController::class,'create'])->name('new_category');
+    Route::get('/login',[AuthController::class,'showLogin'])->name('login');
 
-Route::get('/login',[AuthController::class,'showLogin'])->name('login');
+    Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");
 
+    Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
+    Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
+
+    Route::get('/generate_roles',[SettingsController::class,'generateRoles'])->name('generate_roles');
 
 });
 
-
-Route::get('/generate_roles',[SettingsController::class,'generateRoles'])->name('generate_roles');
 // Route::get('/jobs',[AdminController::class,'addjob']);
 
 // Route::get('/do_job',[AdminController::class,'showjob']);

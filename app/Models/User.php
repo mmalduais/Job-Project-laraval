@@ -16,7 +16,7 @@ class User extends Authenticatable
 
     protected $table="elib_users";
     protected $primaryKey="user_id";
-    
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
