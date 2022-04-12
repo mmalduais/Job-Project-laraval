@@ -50,7 +50,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 // Route::get('/login',[AuthController::class,'showLogin'])->name('login');
 
-Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
+// Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
 
 // Job
 
@@ -94,7 +94,7 @@ Route::group([
 
 
 
-    Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
+    // Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
 
     Route::get('/new_category',[CategoriesController::class,'create'])->name('new_category');
 
@@ -108,6 +108,48 @@ Route::group([
     Route::get('/generate_roles',[SettingsController::class,'generateRoles'])->name('generate_roles');
 
 });
+
+Route::group(['middleware'=>'auth'],function(){
+	Route::group(['middleware'=>'role:admin|super_admin'],function(){
+
+		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+
+		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+
+
+
+	});
+
+	Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+});
+
+Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
+Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+
+
+
+
+Route::group(['middleware'=>'auth'],function(){
+
+
+	Route::group(['middleware'=>'role:admin|super_admin'],function(){
+
+
+
+
+    });
+
+});
+
+
+    Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
+    Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+
+    Route::get('/generate_roles',[SettingsController::class,'generateRoles'])->name('generate_roles');
 
 // Route::get('/jobs',[AdminController::class,'addjob']);
 

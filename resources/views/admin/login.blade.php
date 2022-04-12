@@ -40,19 +40,19 @@
 <!-- beautify ignore:start -->
 <html lang="en" class="light-style  customizer-hide" dir="ltr" data-theme="theme-semi-dark" data-assets-path="../../assets/" data-template="vertical-menu-template-semi-dark">
 
-  
+
 <!-- auth-login-basic.html , Sat, 26 Mar 2022 16:51:58 GMT -->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
-    
+
     <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/favicon/favicon.ico" />
 
@@ -88,7 +88,7 @@
     <script src="../../assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../../assets/js/config.js"></script>
-    
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -160,7 +160,7 @@
           <!-- /Logo -->
           <h4 class="mb-2">{{ __('content.signin'); }} 👋</h4>
           <p class="mb-4">Please sign-in to your account and start the adventure</p>
-            
+
           @if(session()->has('message')){
             <p class="alert alert-danger">{{ session()->get('message') }}</p>
           }
@@ -168,9 +168,9 @@
           @if ($errors->any())
             @foreach ($errors->all() as $err)
             <p class="alert alert-danger">{{ $err }}</p>
-                
+
             @endforeach
-                
+
             @endif
 
           <form id="formAuthentication" class="mb-3" action="{{ route('do_login') }}" method="POST" enctype="multipart/form-data">
@@ -244,13 +244,13 @@
 
 <!-- / Content -->
 
-  
+
   <div class="buy-now">
     <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
   </div>
-  
 
-  
+
+
 
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
@@ -258,11 +258,11 @@
   <script src="../../assets/vendor/libs/popper/popper.js"></script>
   <script src="../../assets/vendor/js/bootstrap.js"></script>
   <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-  
+
   <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
   <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
   <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
-  
+
   <script src="../../assets/vendor/js/menu.js"></script>
   <!-- endbuild -->
 
@@ -276,7 +276,7 @@
 
   <!-- Page JS -->
   <script src="../../assets/js/pages-auth.js"></script>
-  
+
 </body>
 
 

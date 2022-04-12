@@ -1,12 +1,12 @@
 @extends('admin.layout.master')
 
-@section('content')
+@section('adminContent')
 
  <!-- Content -->
-        
+
  <div class="container-xxl flex-grow-1 container-p-y">
-            
-            
+
+
 
     <div class="row">
       <!-- Customer Ratings -->
@@ -113,7 +113,7 @@
       </div>
     </div>
     <div class="row">
-    
+
       <!-- Top Products by -->
       <div class="col-12 col-lg-8 mb-4">
         <div class="card">
@@ -305,7 +305,7 @@
         </div>
       </div>
       <!-- Top Products by -->
-    
+
       <!-- Earning Reports -->
       <div class="col-md-6 col-lg-4 col-xl-4 mb-4">
         <div class="card h-100">
@@ -375,7 +375,7 @@
         </div>
       </div>
       <!--/ Earning Reports -->
-    
+
       <!-- Sales Analytics -->
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100">
@@ -401,7 +401,7 @@
         </div>
       </div>
       <!--/ Sales Analytics -->
-    
+
       <!-- Sales By Country -->
       <div class="col-md-6 col-lg-4 col-xl-4 mb-4">
         <div class="card h-100">
@@ -528,7 +528,7 @@
         </div>
       </div>
       <!--/ Sales By Country -->
-    
+
       <!-- Sales Stats -->
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100">
@@ -559,7 +559,7 @@
         </div>
       </div>
       <!--/ Sales Stats -->
-    
+
       <!-- Team Members -->
       <div class="col-md-6 col-lg-5 mb-md-0 mb-4">
         <div class="card h-100">
@@ -678,7 +678,7 @@
         </div>
       </div>
       <!--/ Team Members -->
-    
+
       <!-- Customer Table -->
       <div class="col-md-6 col-lg-7 mb-0">
         <div class="card">
@@ -869,10 +869,10 @@
       </div>
       <!--/ Customer Table -->
     </div>
-    
-                
+
+
               </div>
               <!-- / Content -->
-    
-    
+
+
 @endsection
