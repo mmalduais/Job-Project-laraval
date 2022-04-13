@@ -98,7 +98,6 @@ Route::group([
 
     Route::get('/new_category',[CategoriesController::class,'create'])->name('new_category');
 
-    Route::get('/login',[AuthController::class,'showLogin'])->name('login');
 
     Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");
 
@@ -108,6 +107,7 @@ Route::group([
     Route::get('/generate_roles',[SettingsController::class,'generateRoles'])->name('generate_roles');
 
 });
+Route::get('/login',[AuthController::class,'showLogin'])->name('login');
 
 Route::group(['middleware'=>'auth'],function(){
 	Route::group(['middleware'=>'role:admin|super_admin'],function(){
@@ -116,12 +116,12 @@ Route::group(['middleware'=>'auth'],function(){
 
 		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
 		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
-		Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
 
 
 
 	});
 
+    Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');
 	Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 });
@@ -143,6 +143,32 @@ Route::group(['middleware'=>'auth'],function(){
     });
 
 });
+
+Route::group(['prefix'=>'admin_panel'],function(){
+
+	Route::group(['middleware'=>['auth','role:admin']],function(){
+
+//		Route::get('/list_categories',[CategoriesController::class,'index'])->name('list_categories');
+	//Route::get('/add_category',[CategoriesController::class,'create'])->name('add_category');
+	/*Route::get('/edit_category/{cat_id}',[CategoriesController::class,'edit'])->name('edit_category');
+	Route::get('/toggle_category/{cat_id}',[CategoriesController::class,'toggle'])->name('toggle_category');
+	Route::post('/save_category',[CategoriesController::class,'store'])->name('save_category');
+	Route::post('/update_category/{cat_id}',[CategoriesController::class,'update'])->name('update_category');
+*/
+	});
+	Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+	Route::get('/login',[AuthController::class,'showLogin'])->name('login');
+	Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
+	Route::get('/list_categories',[CategoriesController::class,'index'])->name('list_categories');
+
+	Route::get('/add_category',[CategoriesController::class,'create'])->name('add_category');
+	Route::get('/edit_category/{cat_id}',[CategoriesController::class,'edit'])->name('edit_category');
+	Route::get('/toggle_category/{cat_id}',[CategoriesController::class,'toggle'])->name('toggle_category');
+	Route::post('/save_category',[CategoriesController::class,'store'])->name('save_category');
+	Route::post('/update_category/{cat_id}',[CategoriesController::class,'update'])->name('update_category');
+});
+
 
 
     Route::get('/dashboard',[DashboardController::class,'adminDash'])->name('dashboard');

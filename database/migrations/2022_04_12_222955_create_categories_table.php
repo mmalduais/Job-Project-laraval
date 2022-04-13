@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        // Schema::create('expert', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->timestamps();
-        // });
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name_ar');
+            $table->string("name_en");
+            $table->boolean("is_active")->default(1);
+            $table->string('image')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('expert');
+        Schema::dropIfExists('cateogries');
     }
 };

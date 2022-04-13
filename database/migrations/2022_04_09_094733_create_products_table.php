@@ -19,8 +19,11 @@ return new class extends Migration
             $table->string('image');
             $table->double('price');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
             $table->foreign('user_id')->references('user_id')->on('elib_users');
+            $table->foreign('category_id')->references('id')->on('categories');
+
         });
     }
 
