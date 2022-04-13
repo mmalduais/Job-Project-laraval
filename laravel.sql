@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13 أبريل 2022 الساعة 20:34
+-- Generation Time: 14 أبريل 2022 الساعة 01:51
 -- إصدار الخادم: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -69,7 +69,7 @@ CREATE TABLE `elib_users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `is_active` int(11) NOT NULL DEFAULT 1
+  `is_active` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -77,7 +77,11 @@ CREATE TABLE `elib_users` (
 --
 
 INSERT INTO `elib_users` (`user_id`, `name`, `email`, `image`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `is_active`) VALUES
-(1, 'mohammed', 'mohmmed201119591@hotmail.com', 'person.png', '2022-04-10 18:12:55', '$2y$10$hHH0tdj0mOGLfcqWJQmHKuw3WYJVj/XvOfvRRJv6UZjcm31awzg5W', NULL, '2022-04-13 15:11:11', '2022-04-13 15:11:11', 1);
+(1, 'mohammed', 'mohmmed201119591@hotmail.com', 'person.png', '2022-04-10 18:12:55', '$2y$10$hHH0tdj0mOGLfcqWJQmHKuw3WYJVj/XvOfvRRJv6UZjcm31awzg5W', NULL, '2022-04-13 15:11:11', '2022-04-13 15:11:11', 1),
+(2, 'aaa', 'mohmmed2011195911@hotmail.com', 'person.png', NULL, '$2y$10$k0mRf6w.k9Qu9pMLEn/LZeeDsko14Xb2CHFzgm.9bKyMQA9XmlwWS', NULL, '2022-04-13 15:54:11', '2022-04-13 15:54:11', 1),
+(3, 'mmm', 'mohmmed20111959111@hotmail.com', 'person.png', NULL, '$2y$10$qnfYEIf5qsG.vF90JRUSQOFwfp9CaUWDekgphaHlkbAJDlZDcY2Uu', NULL, '2022-04-13 19:30:34', '2022-04-13 19:30:34', 1),
+(4, 'ggggg', 'mohmmed20111959551@hotmail.com', 'person.png', NULL, '$2y$10$ha4yOsTbxEilaSGtxkeTsulNsTmbne0zNt1PSHeSp85Ffny3Va78O', NULL, '2022-04-13 20:37:28', '2022-04-13 20:37:28', 0),
+(5, 'mohammed1111', 'mohmmed201119591111@hotmail.com', 'person.png', NULL, '$2y$10$qSFaeqFrgSZoI0gAbVmIlOURAauyh8xCK9U9Hcbv0LEKLoEzRRhfu', NULL, '2022-04-13 20:44:30', '2022-04-13 20:44:30', 1);
 
 -- --------------------------------------------------------
 
@@ -141,14 +145,14 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(11, '2014_10_12_000000_create_users_table', 1),
-(12, '2014_10_12_100000_create_password_resets_table', 1),
-(13, '2019_08_19_000000_create_failed_jobs_table', 1),
-(14, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(15, '2022_04_05_090652_laratrust_setup_tables', 1),
-(16, '2022_04_05_210804_create_jobs_table', 1),
-(17, '2022_04_05_215223_create_companies_table', 1),
-(18, '2022_04_09_003334_create_expert_table', 1);
+(19, '2014_10_12_000000_create_users_table', 1),
+(20, '2014_10_12_100000_create_password_resets_table', 1),
+(21, '2019_08_19_000000_create_failed_jobs_table', 1),
+(22, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(23, '2022_04_05_090652_laratrust_setup_tables', 1),
+(24, '2022_04_05_210804_create_jobs_table', 1),
+(25, '2022_04_05_215223_create_companies_table', 1),
+(26, '2022_04_09_003334_create_expert_table', 1);
 
 -- --------------------------------------------------------
 
@@ -250,6 +254,15 @@ CREATE TABLE `roles` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- إرجاع أو استيراد بيانات الجدول `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'super_admin', 'ادارة النظام', NULL, '2022-04-13 20:32:55', '2022-04-13 20:32:55'),
+(2, 'admin', 'ادارة المحتوى', NULL, '2022-04-13 20:32:55', '2022-04-13 20:32:55'),
+(3, 'client', 'العملاء', NULL, '2022-04-13 20:32:55', '2022-04-13 20:32:55');
+
 -- --------------------------------------------------------
 
 --
@@ -261,6 +274,14 @@ CREATE TABLE `role_user` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `user_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- إرجاع أو استيراد بيانات الجدول `role_user`
+--
+
+INSERT INTO `role_user` (`role_id`, `user_id`, `user_type`) VALUES
+(2, 4, 'App\\Models\\User'),
+(2, 5, 'App\\Models\\User');
 
 -- --------------------------------------------------------
 
@@ -432,7 +453,7 @@ ALTER TABLE `companies`
 -- AUTO_INCREMENT for table `elib_users`
 --
 ALTER TABLE `elib_users`
-  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `expert`
@@ -456,7 +477,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -480,7 +501,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -515,7 +536,7 @@ ALTER TABLE `permission_user`
 -- القيود للجدول `role_user`
 --
 ALTER TABLE `role_user`
-  ADD CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `elib_users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

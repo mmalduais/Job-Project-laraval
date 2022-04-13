@@ -58,7 +58,7 @@ Route::get('/job',[AdminJobsController::class,'show']);
 Route::post('/admin/company/add',[AdminJobsController::class,'addNew']);
 
 // Company
-Route::get('/admin/company',[AdminCompaniesController::class,'show'])->name('show_company');
+Route::get('/company',[AdminCompaniesController::class,'show'])->name('show_company');
 Route::post('/admin/company/add',[AdminCompaniesController::class,'addNew'])->name('add_company');
 
 // Personal
@@ -94,12 +94,12 @@ Route::group([
 
 
 
-    // Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
 
     Route::get('/new_category',[CategoriesController::class,'create'])->name('new_category');
 
 
     Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");
+    Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
 
     Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
     Route::post('/save_user',[AuthController::class,'register'])->name('save_user');

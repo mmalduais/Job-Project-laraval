@@ -179,13 +179,13 @@
       <span class="menu-header-text">Apps &amp; Pages</span>
     </li>
     <li class="menu-item">
-      <a href="/jobs" class="menu-link">
+      <a href="/job" class="menu-link">
         <i class="menu-icon tf-icons bx bx-calendar"></i>
         <div >JOB</div>
       </a>
     </li>
     <li class="menu-item">
-      <a href="app-calendar.html" class="menu-link">
+      <a href="/company" class="menu-link">
         <i class="menu-icon tf-icons bx bx-calendar"></i>
         <div >Company</div>
       </a>
