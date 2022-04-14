@@ -190,6 +190,14 @@
         <div >Company</div>
       </a>
     </li>
+
+    <li class="menu-item">
+        <a href="/category" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-calendar"></i>
+          <div >Category</div>
+        </a>
+      </li>
+
     <li class="menu-item">
       <a href="app-calendar.html" class="menu-link">
         <i class="menu-icon tf-icons bx bx-calendar"></i>

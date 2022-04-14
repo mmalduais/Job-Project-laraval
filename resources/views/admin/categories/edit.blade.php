@@ -19,7 +19,7 @@
           @endif
 
 
-          <form method="POST" action="{{ route('save_category') }}" enctype="multipart/form-data">
+          <form method="POST" action="{{ route('update_category',$category->id) }}" enctype="multipart/form-data">
             @csrf
 
             <div class="row g-3">
@@ -27,7 +27,7 @@
               <div class="row">
                 <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-first-name"> الإسم العربي</label>
                 <div class="col-sm-9">
-                  <input type="text" name="name_ar" id="formtabs-first-name" class="form-control" placeholder="John" />
+                  <input type="text"  value="{{ $category->name_ar }}" name="name_ar" id="formtabs-first-name" class="form-control" placeholder="John" />
                 </div>
               </div>
             </div>
@@ -35,7 +35,7 @@
               <div class="row">
                 <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-last-name"> الإسم الانجليزي</label>
                 <div class="col-sm-9">
-                  <input type="text" name="name_en" id="formtabs-last-name" class="form-control" placeholder="Doe" />
+                  <input type="text" name="name_en" value="{{ $category->name_en }}" id="formtabs-last-name" class="form-control" value="{{ $category->name_ar }}" />
                 </div>
               </div>
             </div>
@@ -45,8 +45,8 @@
                 <div class="col-sm-9">
                   <select  name="is_active" id="formtabs-country" class="select2 form-select" data-allow-clear="true">
 
-                    <option value="1">مفعل</option>
-                    <option value="-1">معطل</option>
+                    <option @if($category->is_active==1) selected @endif value="1">مفعل</option>
+                    <option  @if($category->is_active==-1) selected @endif value="-1">معطل</option>
                   </select>
                 </div>
               </div>
@@ -68,7 +68,7 @@
 
         </div>
         <div class="card-footer">
-          <input type="submit" name="submit" id="formtabs-first-name"  value="حفظ"class="form-control" placeholder="John" />
+          <input type="submit" name="submit" id="formtabs-first-name"  value="تعديل"class="form-control" placeholder="John" />
 
         </form>
 
